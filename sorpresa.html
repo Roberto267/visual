@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Fany ❤️✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(9, 5, 20, 0.75), rgba(9, 5, 20, 0.75)), 
+                        url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-out;
+            max-width: 550px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 40px 25px 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px rgba(255, 255, 255, 0.15) solid;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        /* Corazón animado con espacio suficiente para las orejas superiores */
+        .heart {
+            background-color: #f43f5e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            width: 90px;
+            margin: 50px auto 40px; /* Margen superior amplio para evitar que se corte */
+            position: relative;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 40px #f43f5e;
+            animation: beat 0.8s infinite alternate ease-in-out;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            background-color: #f43f5e;
+            border-radius: 50%;
+            height: 90px;
+            position: absolute;
+            width: 90px;
+        }
+
+        .heart:before { top: -45px; left: 0; }
+        .heart:after { top: 0; left: 45px; }
+
+        /* Estilo para centrar el nombre correctamente en el corazón */
+        .heart-text {
+            position: absolute;
+            z-index: 5;
+            transform: rotate(45deg); /* Contrarresta la rotación del corazón */
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            white-space: nowrap;
+            /* Ajuste para centrar el texto en el área visible */
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .texto-sorpresa {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #f1f5f9;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .texto-sorpresa p {
+            margin-bottom: 15px;
+        }
+
+        .pregunta {
+            font-size: 1.45rem;
+            color: #fb7185;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+            min-height: 60px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-si {
+            background: linear-gradient(135deg, #f43f5e, #be123c);
+            color: white;
+            z-index: 2;
+        }
+
+        .btn-si:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #f43f5e;
+        }
+
+        .btn-no {
+            background-color: #475569;
+            color: #cbd5e1;
+            z-index: 2;
+        }
+
+        .mini-heart {
+            position: absolute;
+            color: #f43f5e;
+            font-size: 24px;
+            pointer-events: none;
+            z-index: 10;
+            animation: floatUp 1.2s linear forwards;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1) rotate(-45deg); }
+            100% { transform: scale(1.15) rotate(-45deg); box-shadow: 0 0 55px #f43f5e; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120px) translateX(var(--x-move)) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart">
+            <span class="heart-text">denis</span>
+        </div>
+        
+        <div class="texto-sorpresa">
+            <p> Se que llevamos poco tiempo conociendonos pero yo... ❤️ Deseo conocerte cada vez un poco más.🥰 Me encanta tu forma de ser, no cambiaría nada de tu esencia ya que tú brillas de una manera única. ✨ Así como eres, ¡vales oro! Espero me permitas conocerte más y más para luego llegar a tener algo más. 💕 Te quiero mucho y además te cuidaré muchísimo hasta el día que tú me lo permitas. 💖🌌</p>
+            
+            <p style="font-size: 1.1rem; color: #cbd5e1; font-style: italic;">¡Manda captura de tu respuesta, linda! 📸✨</p>
+            <p class="pregunta">¿Quieres tener una aventura conmigo para conocernos y tener algo? ❤️</p>
+        </div>
+
+        <div class="botones">
+            <button class="btn btn-si" id="btnSi" onclick="aceptar()">¡Sí! ❤️</button>
+            <button class="btn btn-no" id="btnNo" onmouseover="esquivarYCambiar(this)" onclick="esquivarYCambiar(this)">No</button>
+        </div>
+    </div>
+
+    <script>
+        function aceptar() {
+            lluviaCorazones();
+            alert("¡Sabía que dirías que sí! 💖🥰 Prepárate para la mejor experiencia juntos. ❤️✨");
+        }
+
+        function esquivarYCambiar(boton) {
+            boton.innerText = "¡Obvio sí! 🥰";
+            boton.classList.remove('btn-no');
+            boton.classList.add('btn-si');
+            
+            crearCorazon(boton.getBoundingClientRect().left + 40, boton.getBoundingClientRect().top);
+
+            const x = Math.random() * (window.innerWidth - 140);
+            const y = Math.random() * (window.innerHeight - 60);
+            
+            boton.style.position = "fixed";
+            boton.style.left = x + "px";
+            boton.style.top = y + "px";
+        }
+
+        function crearCorazon(posX, posY) {
+            const corazon = document.createElement('div');
+            corazon.innerHTML = '💖';
+            corazon.classList.add('mini-heart');
+            
+            corazon.style.left = (posX || (window.innerWidth / 2 + (Math.random() * 100 - 50))) + 'px';
+            corazon.style.top = (posY || (window.innerHeight / 2)) + 'px';
+            
+            corazon.style.setProperty('--x-move', (Math.random() * 80 - 40) + 'px');
+            
+            document.body.appendChild(corazon);
+            
+            setTimeout(() => {
+                corazon.remove();
+            }, 1200);
+        }
+
+        function lluviaCorazones() {
+            for(let i = 0; i < 35; i++) {
+                setTimeout(() => {
+                    const xRandom = Math.random() * window.innerWidth;
+                    const yRandom = Math.random() * (window.innerHeight / 2) + (window.innerHeight / 2);
+                    crearCorazon(xRandom, yRandom);
+                }, i * 50);
+            }
+        }
+    </script>
+
+</body>
+</html>
